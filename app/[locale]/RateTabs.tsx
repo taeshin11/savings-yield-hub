@@ -18,20 +18,24 @@ interface RateTabsProps {
     noFeeOnly: string;
     all: string;
   };
+  tabLabels: {
+    hysa: string;
+    cd: string;
+    moneyMarket: string;
+  };
   locale: string;
-  t: (key: string) => string;
 }
 
 const TABS = ['hysa', 'cd', 'money-market'] as const;
 
-export default function RateTabs({ banks, tableLabels, t }: RateTabsProps) {
+export default function RateTabs({ banks, tableLabels, tabLabels }: RateTabsProps) {
   const [activeTab, setActiveTab] = useState<'hysa' | 'cd' | 'money-market'>('hysa');
   const [cdTerm, setCdTerm] = useState('1-year');
 
-  const tabLabels = {
-    hysa: t('tabs.hysa'),
-    cd: t('tabs.cd'),
-    'money-market': t('tabs.moneyMarket'),
+  const tabLabelMap = {
+    hysa: tabLabels.hysa,
+    cd: tabLabels.cd,
+    'money-market': tabLabels.moneyMarket,
   };
 
   const cdTerms = ['3-month', '6-month', '1-year', '2-year', '5-year'];
@@ -51,7 +55,7 @@ export default function RateTabs({ banks, tableLabels, t }: RateTabsProps) {
                 : { background: '#ffffff', color: '#064e3b', border: '1px solid #d1fae5' }
             }
           >
-            {tabLabels[tab]}
+            {tabLabelMap[tab]}
           </button>
         ))}
       </div>

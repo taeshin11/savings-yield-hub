@@ -1,6 +1,5 @@
 import { getMessages } from 'next-intl/server';
 import { getAllBanks } from '@/lib/banks';
-import RateTable from '@/components/RateTable';
 import APYCalculator from '@/components/APYCalculator';
 import SchemaLD from '@/components/SchemaLD';
 import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
@@ -32,8 +31,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
   };
 }
-
-const TABS = ['hysa', 'cd', 'money-market'] as const;
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -125,7 +122,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
       {/* Rate Tabs */}
       <section className="container mx-auto px-4 mb-8">
-        <RateTabs banks={banks} tableLabels={tableLabels} locale={locale} t={t} />
+        <RateTabs
+          banks={banks}
+          tableLabels={tableLabels}
+          tabLabels={{ hysa: t('tabs.hysa'), cd: t('tabs.cd'), moneyMarket: t('tabs.moneyMarket') }}
+          locale={locale}
+        />
       </section>
 
       {/* Ad Display */}
