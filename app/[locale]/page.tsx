@@ -7,6 +7,7 @@ import AdsterraNativeBanner from '@/components/ads/AdsterraNativeBanner';
 import AdsterraDisplay from '@/components/ads/AdsterraDisplay';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import RateTabs from './RateTabs';
 
 const locales = ['en', 'ko', 'ja', 'zh', 'es', 'fr', 'de', 'pt'];
 
@@ -219,5 +220,3 @@ function BestOfCard({
   );
 }
 
-// Tab wrapper (needs to be a client component for tab state)
-import RateTabs from './RateTabs';
