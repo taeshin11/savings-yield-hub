@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #f0fdf4;
+  --bg-card: #ffffff;
+  --bg-accent: #ecfdf5;
+  --bg-highlight: #d1fae5;
+  --text-primary: #064e3b;
+  --text-secondary: #6b7280;
+  --accent: #10b981;
+  --accent-gold: #f59e0b;
+  --border: #d1fae5;
+  --badge-fdic: #dbeafe;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,11 @@
+# SavingsYieldHub — Claude Progress Log
+# Format: [TIMESTAMP] [MILESTONE] [STATUS] [NOTES]
+# Statuses: STARTED | IN_PROGRESS | COMPLETE | BLOCKED
+
+[2025-04-13] [START] Project initialized
+[2025-04-13] [M1] COMPLETE scaffold — Next.js 16, Tailwind v4, next-intl v4
+[2025-04-13] [M2] COMPLETE data layer — banks-fallback.json (20 banks), types, lib/banks, lib/fdic
+[2025-04-13] [M3] COMPLETE homepage — rate leaderboard (3 tabs), APY calculator, FAQ, visitor counter, i18n 8 locales, Adsterra placeholders
+[2025-04-13] [M4] COMPLETE programmatic SEO — banks index, bank detail, products pages, CD term pages (5), sitemap, robots, schema.org JSON-LD, hreflang
+[2025-04-13] [M5] COMPLETE calculator page, compare tool, best-of curated lists
+[2025-04-13] [M6] IN_PROGRESS build & deploy
