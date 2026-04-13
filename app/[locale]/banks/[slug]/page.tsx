@@ -115,7 +115,6 @@ export default async function BankDetailPage({ params }: { params: Promise<{ loc
           width={60}
           height={60}
           className="rounded-xl"
-          onError={() => {}}
         />
         <div>
           <h1 className="text-2xl font-bold" style={{ color: '#064e3b' }}>{bank.name}</h1>

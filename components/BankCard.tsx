@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import FDICBadge from './FDICBadge';
 import type { Bank } from '@/types/bank';
