@@ -4,11 +4,21 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import '../globals.css';
+import type { Metadata } from 'next';
 
 const locales = ['en', 'ko', 'ja', 'zh', 'es', 'fr', 'de', 'pt'];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  return {
+    other: {
+      'google-adsense-account': 'ca-pub-7098271335538021',
+      'naver-site-verification': 'placeholder',
+    },
+  };
 }
 
 interface LocaleLayoutProps {
@@ -41,19 +51,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   };
 
   return (
-    <html lang={locale}>
-      <head>
-        <meta name="google-adsense-account" content="ca-pub-7098271335538021" />
-        <meta name="naver-site-verification" content="placeholder" />
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body style={{ background: '#f0fdf4', color: '#064e3b', fontFamily: 'Arial, Helvetica, sans-serif', margin: 0 }}>
-        <NextIntlClientProvider messages={messages}>
-          <Navbar locale={locale} nav={nav} />
-          <main>{children}</main>
-          <Footer labels={footerLabels} />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <>
+      <NextIntlClientProvider messages={messages}>
+        <Navbar locale={locale} nav={nav} />
+        <main>{children}</main>
+        <Footer labels={footerLabels} />
+      </NextIntlClientProvider>
+    </>
   );
 }
