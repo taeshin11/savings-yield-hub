@@ -34,6 +34,16 @@ export default function Footer({ labels }: FooterProps) {
             {labels.visitorTotal}: <span className="font-semibold">{visitor.total.toLocaleString()}</span>
           </p>
         )}
+        <div className="flex flex-wrap justify-center gap-4 mt-4 mb-4">
+          {[
+            { href: `/en/about`, label: 'About Us' },
+            { href: `/en/how-to-use`, label: 'How to Use' },
+            { href: `/en/privacy`, label: 'Privacy Policy' },
+            { href: `/en/terms`, label: 'Terms of Service' },
+          ].map((link) => (
+            <a key={link.href} href={link.href} className="text-xs hover:underline" style={{color:'#064e3b'}}>{link.label}</a>
+          ))}
+        </div>
         <div className="text-xs text-center mt-4 space-y-2 max-w-2xl mx-auto" style={{ color: '#6b7280' }}>
           <p>{labels.disclaimer}</p>
           <p>{labels.fdic}</p>

@@ -16,6 +16,13 @@ const staticRoutes = [
   '/compare',
 ];
 
+const contentRoutes = [
+  '/about',
+  '/how-to-use',
+  '/privacy',
+  '/terms',
+];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const banks = await getAllBanks();
   const entries: MetadataRoute.Sitemap = [];
@@ -28,6 +35,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         lastModified: new Date(),
         changeFrequency: 'daily',
         priority: route === '' ? 1.0 : 0.8,
+      });
+    }
+    // Content pages
+    for (const route of contentRoutes) {
+      entries.push({
+        url: `${BASE_URL}/${locale}${route}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.6,
       });
     }
     // CD term pages
