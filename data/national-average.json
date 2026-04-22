@@ -1,5 +1,7 @@
 {
-  "savingsRate": 0.46,
+  "savingsRate": 0.42,
   "source": "Federal Reserve H.15",
-  "lastUpdated": "2025-04-01"
+  "lastUpdated": "2026-04-22",
+  "fedFundsRate": 3.875,
+  "note": "Fed target range 3.75-4.00% as of April 2026"
 }
